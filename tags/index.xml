@@ -1,81 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Gokarna</title>
+    <title>Tags on alonewhite</title>
     <link>https://gokarna-hugo.netlify.app/tags/</link>
-    <description>Recent content in Tags on Gokarna</description>
+    <description>Recent content in Tags on alonewhite</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 15 Apr 2021 23:39:49 +0530</lastBuildDate><atom:link href="https://gokarna-hugo.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://gokarna-hugo.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>def</title>
-      <link>https://gokarna-hugo.netlify.app/tags/def/</link>
-      <pubDate>Thu, 15 Apr 2021 23:39:49 +0530</pubDate>
+      <title>blog</title>
+      <link>https://gokarna-hugo.netlify.app/tags/blog/</link>
+      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://gokarna-hugo.netlify.app/tags/def/</guid>
+      <guid>https://gokarna-hugo.netlify.app/tags/blog/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>xyz</title>
-      <link>https://gokarna-hugo.netlify.app/tags/xyz/</link>
-      <pubDate>Thu, 15 Apr 2021 23:39:49 +0530</pubDate>
-      
-      <guid>https://gokarna-hugo.netlify.app/tags/xyz/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>emoji</title>
-      <link>https://gokarna-hugo.netlify.app/tags/emoji/</link>
+      <title>模式识别</title>
+      <link>https://gokarna-hugo.netlify.app/tags/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB/</link>
       <pubDate>Thu, 01 Oct 2020 17:55:28 +0800</pubDate>
       
-      <guid>https://gokarna-hugo.netlify.app/tags/emoji/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>configuration</title>
-      <link>https://gokarna-hugo.netlify.app/tags/configuration/</link>
-      <pubDate>Wed, 06 May 2020 21:29:01 +0800</pubDate>
-      
-      <guid>https://gokarna-hugo.netlify.app/tags/configuration/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>installation</title>
-      <link>https://gokarna-hugo.netlify.app/tags/installation/</link>
-      <pubDate>Wed, 06 May 2020 21:29:01 +0800</pubDate>
-      
-      <guid>https://gokarna-hugo.netlify.app/tags/installation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>markdown</title>
-      <link>https://gokarna-hugo.netlify.app/tags/markdown/</link>
-      <pubDate>Wed, 06 May 2020 21:29:01 +0800</pubDate>
-      
-      <guid>https://gokarna-hugo.netlify.app/tags/markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>css</title>
-      <link>https://gokarna-hugo.netlify.app/tags/css/</link>
-      <pubDate>Wed, 19 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://gokarna-hugo.netlify.app/tags/css/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>html</title>
-      <link>https://gokarna-hugo.netlify.app/tags/html/</link>
-      <pubDate>Wed, 19 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://gokarna-hugo.netlify.app/tags/html/</guid>
+      <guid>https://gokarna-hugo.netlify.app/tags/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB/</guid>
       <description></description>
     </item>
     

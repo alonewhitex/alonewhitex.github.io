@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on alonewhite</title>
+    <link>https://gokarna-hugo.netlify.app/tags/blog/</link>
+    <description>Recent content in blog on alonewhite</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 15 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://gokarna-hugo.netlify.app/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fisher线性判别</title>
+      <link>https://gokarna-hugo.netlify.app/posts/fisher%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB/</link>
+      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://gokarna-hugo.netlify.app/posts/fisher%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB/</guid>
+      <description>1. 符号说明 $$ X=(x_1\ x_2\ \dots\ x_N)^T=\left(\begin{array}{c} x_1^T \ x_2^T \ \dots \ x_N^T \end{array}\right)_{N \times p}^T $$
+$$ Y=(y_1\ y_2\ \dots\ y_N)^T=\left(\begin{array}{c} y_1 \ y_2 \ \dots \ y_N \end{array}\right)_{N \times 1}^T $$
+$$ x_i \in \mathbb{R}^p, y_i \in {-1,1} $$
+$$ x_{c_1}={x_i|y_i=1}, x_{c_2}={x_i|y_i=-1} $$
+$$ |x_{c_1}|=N_1, |x_{c_2}|=N_2, N_1+N_2=N $$
+2. 基本思想 寻找一个最合适的投影轴，目标是使得：
+两类样本在该轴上投影之间的距离尽可能远；每一类样本的投影尽可能紧凑。
+3. 定义目标函数 我们假设投影轴的方向向量为$w$，则投影后的样本点为
+$$ z_i=w^Tx_i $$
+投影后的样本均值为
+$$ \bar{z}=\frac{1}{N}\sum\limits_{i=1}^{N}z_i=\frac{1}{N}\sum\limits_{i=1}^{N}w^Tx_i $$
+投影后的样本类内离散度矩阵为
+$$ S_z=\frac{1}{N}\sum\limits_{i=1}^N(z_i-\bar{z})(z_i-\bar{z})^T=\frac{1}{N}\sum\limits_{i=1}^N(w^Tx_i-\bar{z})(w^Tx_i-\bar{z})^T $$
+具体来说：</description>
+    </item>
+    
+  </channel>
+</rss>

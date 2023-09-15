@@ -17,26 +17,26 @@
     
 
     
-    <title>Emoji Support</title>
-    <meta name="description" content="Guide to emoji usage in Hugo and DoIt.">
-    <meta name="keywords" content='模式识别'>
+    <title>Fisher线性判别</title>
+    <meta name="description" content="Fisher线性判别">
+    <meta name="keywords" content='blog'>
 
-    <meta property="og:url" content="https://gokarna-hugo.netlify.app/posts/emoji-support/">
+    <meta property="og:url" content="https://gokarna-hugo.netlify.app/posts/fisher%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Emoji Support">
-    <meta property="og:description" content="Guide to emoji usage in Hugo and DoIt.">
-    <meta property="og:image" content="https://gokarna-hugo.netlify.app/images/avater.jpg">
-    <meta property="og:image:secure_url" content="https://gokarna-hugo.netlify.app/images/avater.jpg">
+    <meta property="og:title" content="Fisher线性判别">
+    <meta property="og:description" content="Fisher线性判别">
+    <meta property="og:image" content="https://gokarna-hugo.netlify.app/path/to/image.png">
+    <meta property="og:image:secure_url" content="https://gokarna-hugo.netlify.app/path/to/image.png">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Emoji Support">
-    <meta name="twitter:description" content="Guide to emoji usage in Hugo and DoIt.">
-    <meta property="twitter:domain" content="https://gokarna-hugo.netlify.app/posts/emoji-support/">
-    <meta property="twitter:url" content="https://gokarna-hugo.netlify.app/posts/emoji-support/">
-    <meta name="twitter:image" content="https://gokarna-hugo.netlify.app/images/avater.jpg">
+    <meta name="twitter:title" content="Fisher线性判别">
+    <meta name="twitter:description" content="Fisher线性判别">
+    <meta property="twitter:domain" content="https://gokarna-hugo.netlify.app/posts/fisher%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB/">
+    <meta property="twitter:url" content="https://gokarna-hugo.netlify.app/posts/fisher%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB/">
+    <meta name="twitter:image" content="https://gokarna-hugo.netlify.app/path/to/image.png">
 
     
-    <link rel="canonical" href="https://gokarna-hugo.netlify.app/posts/emoji-support/" />
+    <link rel="canonical" href="https://gokarna-hugo.netlify.app/posts/fisher%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB/" />
 
     
     <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
@@ -151,148 +151,120 @@
 <main id="content">
     <div class="post container">
     <div class="post-header-section">
-        <h1>Emoji Support</h1>
-        <small role="doc-subtitle">Guide to emoji usage in Hugo and DoIt.</small>
+        <h1>Fisher线性判别</h1>
+        <small role="doc-subtitle">Fisher线性判别</small>
         <p class="post-date">
-            October 1, 2020
+            September 15, 2023
         </p>
 
         <ul class="post-tags">
         
-            <li class="post-tag"><a href="https://gokarna-hugo.netlify.app/tags/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB">模式识别</a></li>
+            <li class="post-tag"><a href="https://gokarna-hugo.netlify.app/tags/blog">blog</a></li>
         
         </ul>
     </div>
 
     <div class="post-content">
         <p>
-            <p>\title{线性分类器}</p>
-<p>\date{}</p>
-<p>\usepackage{array}</p>
-<p>\begin{document}</p>
-<p>\maketitle</p>
-<p>\section{Fisher线性判别}</p>
-<p>\subsection{符号说明}</p>
-<p>{\centering$X=(x_1\ x_2\ \dots\ x_N)^T=\left(\begin{array}{c}
+            <h3 id="1-符号说明">1. 符号说明</h3>
+<p>$$
+X=(x_1\ x_2\ \dots\ x_N)^T=\left(\begin{array}{c}
 x_1^T \
 x_2^T \
-\vdots \
+\dots \
 x_N^T
-\end{array}\right)_{N \times p}$</p>
-<p>$Y=(y_1\ y_2\ \dots\ y_N)^T=\left(\begin{array}{c}
+\end{array}\right)_{N \times p}^T
+$$</p>
+<p>$$
+Y=(y_1\ y_2\ \dots\ y_N)^T=\left(\begin{array}{c}
 y_1 \
 y_2 \
-\vdots \
+\dots \
 y_N
-\end{array}\right)_{N \times 1}$</p>
-<p>$x_i \in \mathbb{R}^p$, $y_i \in {-1,1}$</p>
-<p>$x_{c_1}={x_i|y_i=1}$, $x_{c_2}={x_i|y_i=-1}$</p>
-<p>$|x_{c_1}|=N_1$, $|x_{c_2}|=N_2$, $N_1+N_2=N$</p>
-<p>}</p>
-<p>\subsection{基本思想}</p>
+\end{array}\right)_{N \times 1}^T
+$$</p>
+<p>$$
+x_i \in \mathbb{R}^p, y_i \in {-1,1}
+$$</p>
+<p>$$
+x_{c_1}={x_i|y_i=1}, x_{c_2}={x_i|y_i=-1}
+$$</p>
+<p>$$
+|x_{c_1}|=N_1, |x_{c_2}|=N_2, N_1+N_2=N
+$$</p>
+<h3 id="2-基本思想">2. 基本思想</h3>
 <p>寻找一个最合适的投影轴，目标是使得：</p>
-<p>\textbf{两类样本在该轴上投影之间的距离尽可能远；每一类样本的投影尽可能紧凑。}</p>
-<p>\subsection{定义目标函数}</p>
+<p><strong>两类样本在该轴上投影之间的距离尽可能远；每一类样本的投影尽可能紧凑。</strong></p>
+<h3 id="3-定义目标函数">3. 定义目标函数</h3>
 <p>我们假设投影轴的方向向量为$w$，则投影后的样本点为</p>
-<p>\begin{equation}
+<p>$$
 z_i=w^Tx_i
-\end{equation}</p>
+$$</p>
 <p>投影后的样本均值为</p>
-<p>\begin{equation}
+<p>$$
 \bar{z}=\frac{1}{N}\sum\limits_{i=1}^{N}z_i=\frac{1}{N}\sum\limits_{i=1}^{N}w^Tx_i
-\end{equation}</p>
+$$</p>
 <p>投影后的样本类内离散度矩阵为</p>
-<p>\begin{equation}
+<p>$$
 S_z=\frac{1}{N}\sum\limits_{i=1}^N(z_i-\bar{z})(z_i-\bar{z})^T=\frac{1}{N}\sum\limits_{i=1}^N(w^Tx_i-\bar{z})(w^Tx_i-\bar{z})^T
-\end{equation}</p>
+$$</p>
 <p>具体来说：</p>
-<p>\begin{equation}
+<p>$$
 c_1: \bar{z_1}=\frac{1}{N_1}\sum\limits_{i=1}^{N_1}w^Tx_i
-\end{equation}</p>
-<p>\begin{equation}
+$$</p>
+<p>$$
 S_{1}=\frac{1}{N_1}\sum\limits_{i=1}^{N_1}(w^Tx_i-\bar{z_1})(w^Tx_i-\bar{z_1})^T
 % \end{aligned}
-\end{equation}</p>
-<p>\begin{equation}
+$$</p>
+<p>$$
 c_2: \bar{z_2}=\frac{1}{N_2}\sum\limits_{i=1}^{N_2}w^Tx_i
-\end{equation}</p>
-<p>\begin{equation}
+$$</p>
+<p>$$
 S_{2}=\frac{1}{N_2}\sum\limits_{i=1}^{N_2}(w^Tx_i-\bar{z_2})(w^Tx_i-\bar{z_2})^T
-\end{equation}</p>
+$$</p>
 <p>类间：$(\bar{z_1}-\bar{z_2})^2$</p>
 <p>类内：$S_1+S_2$</p>
 <p>要让类间距离最大，类内距离最小，可以定义目标函数为：</p>
-<p>\begin{equation}
+<p>$$
 J(w)=(\bar{z_1}-\bar{z_2})^2/(S_1+S_2)
-\end{equation}</p>
-<p>\begin{equation}
+$$</p>
+<p>$$
 \hat{w}=arg\max\limits_{w}J(w)
-\end{equation}</p>
-<p>对于$J(w)$：</p>
-<p>\begin{equation}
-\begin{aligned}
-\mbox{分子}&amp;=(\bar{z_1}-\bar{z_2})^2\
-&amp;=(\frac{1}{N_1}\sum\limits_{i=1}^{N_1}w^Tx_i-\frac{1}{N_2}\sum\limits_{i=1}^{N_2}w^Tx_i)^2\
-&amp;=[w^T(\frac{1}{N_1}\sum\limits_{i=1}^{N_1}x_i-\frac{1}{N_2}\sum\limits_{i=1}^{N_2}x_i)]^2\
-&amp;=[w^T(\bar{x_{c_1}}-\bar{x_{c_2}})]^2\
-&amp;=w^T(\bar{x_{c_1}}-\bar{x_{c_2}})(\bar{x_{c_1}}-\bar{x_{c_2}})^Tw
-\end{aligned}
-\end{equation}</p>
-<p>\begin{equation}
-\begin{aligned}
-S_1&amp;=\frac{1}{N_1}\sum\limits_{i=1}^{N_1}(w^Tx_i-\bar{z_1})(w^Tx_i-\bar{z_1})^T\
-&amp;=\frac{1}{N_1}\sum\limits_{i=1}^{N_1}(w^Tx_i-\frac{1}{N}\sum\limits_{j=1}^{N}w^Tx_j)(w^Tx_i-\frac{1}{N}\sum\limits_{j=1}^{N}w^Tx_j)^T\
-&amp;=\frac{1}{N_1}\sum\limits_{i=1}^{N_1}(w^Tx_i-w^T\bar{x_{c_1}})(w^Tx_i-w^T\bar{x_{c_1}})^T\
-&amp;=\frac{1}{N_1}\sum\limits_{i=1}^{N_1}w^T(x_i-\bar{x_{c_1}})(x_i-\bar{x_{c_1}})^Tw\
-&amp;=w^T\underbrace{\frac{1}{N_1}\sum\limits_{i=1}^{N_1}(x_i-\bar{x_{c_1}})(x_i-\bar{x_{c_1}})^T}<em>{\mbox{定义为}S</em>{c_1}}w\
-&amp;=w^TS_{c_1}w
-\end{aligned}
-\end{equation}</p>
-<p>\begin{equation}
-\begin{aligned}
-\mbox{分母}&amp;=(S_1+S_2)\
-&amp;=w^TS_{c_1}w+w^TS_{c_2}w\
-&amp;=w^T(S_{c_1}+S_{c_2})w
-\end{aligned}
-\end{equation}</p>
-<p>因此，$J(w)$可以写成：</p>
-<p>\begin{equation}
+$$</p>
+<p>$J(w)$可以写成：</p>
+<p>$$
 J(w)=\frac{w^T(\bar{x_{c_1}}-\bar{x_{c_2}})(\bar{x_{c_1}}-\bar{x_{c_2}})^Tw}{w^T(S_{c_1}+S_{c_2})w}
-\end{equation}</p>
-<p>\subsection{闭式解}</p>
+$$</p>
+<h1 id="4-闭式解">4. 闭式解</h1>
 <p>Fisher判别准则为：</p>
-<p>\begin{equation}
+<p>$$
 \hat{w}=arg\max\limits_{w}J(w)=arg\max\limits_{w}\frac{w^T(\bar{x_{c_1}}-\bar{x_{c_2}})(\bar{x_{c_1}}-\bar{x_{c_2}})^Tw}{w^T(S_{c_1}+S_{c_2})w}
-\end{equation}</p>
+$$</p>
 <p>采用拉格朗日乘子法：</p>
-<p>\begin{equation}
+<p>$$
 L(w,\lambda)=w^T(\bar{x_{c_1}}-\bar{x_{c_2}})(\bar{x_{c_1}}-\bar{x_{c_2}})^Tw-\lambda(w^T(S_{c_1}+S_{c_2})w-c)
-\end{equation}</p>
+$$</p>
 <p>对$w$求导：</p>
-<p>\begin{equation}
-\frac{\partial L(w,\lambda)}{\partial w}=(\bar{x_{c_1}}-\bar{x_{c_2}})(\bar{x_{c_1}}-\bar{x_{c_2}})^Tw-\lambda(S_{c_1}+S_{c_2})w\overset{\mbox{令}}{=}0
-\end{equation}</p>
+<p>$$
+\frac{\partial L(w,\lambda)}{\partial w}=(\bar{x_{c_1}}-\bar{x_{c_2}})(\bar{x_{c_1}}-\bar{x_{c_2}})^Tw-\lambda(S_{c_1}+S_{c_2})w\overset{令}{=}0
+$$</p>
 <p>若$S_{c_1}+S_{c_2}$可逆，则有：</p>
-<p>\begin{equation}
+<p>$$
 \lambda w^*=(S_{c_1}+S_{c_2})^{-1}(\bar{x_{c_1}}-\bar{x_{c_2}})(\bar{x_{c_1}}-\bar{x_{c_2}})^Tw
-\end{equation}</p>
+$$</p>
 <p>又$(\bar{x_{c_1}}-\bar{x_{c_2}})^Tw$为标量，因此有：</p>
-<p>\begin{equation}
+<p>$$
 w^*=(S_{c_1}+S_{c_2})^{-1}(\bar{x_{c_1}}-\bar{x_{c_2}})
-\end{equation}</p>
-<p>\subsection{决策面}</p>
-<p>在正态分布及等协方差矩阵的假设下, 以$\bar{x_{c_i}}$估计均值，$S_{c_i}$估计协方差矩阵，则有：
-\begin{equation}
-\begin{aligned}
-&amp; w^*=(S_{c_1}+S_{c_2})^{-1}(\bar{x_{c_1}}-\bar{x_{c_2}})\
-&amp; w_0=\frac{1}{2}(\bar{x_{c_1}}+\bar{x_{c_2}})^T(S_{c_1}+S_{c_2})^{-1}(\bar{x_{c_1}}-\bar{x_{c_2}})+\ln\frac{P(c_2)}{P(c_1)}
-\end{aligned}
-\end{equation}</p>
-<p>% 当$d$ 和 $N$ 很大时, $y$ 近似正态分布, 可在 $\mathbf{Y}$ 空间 内用 Bayes 分类器;</p>
-<p>利用先验知识确定一维分类阈值 $w_0$
-% \begin{equation}
-% y_0=\frac{\tilde{m}_1+\tilde{m}_2}{2} ; \quad y_0=\frac{N_1 \tilde{m}_1+N_2 \tilde{m}_2}{N_1+N_2}=\tilde{m} ; \quad y_0=\frac{\tilde{m}_1+\tilde{m}_2}{2}+\frac{\ln \left(P\left(\omega_1 / \omega_2\right)\right)}{N_1+N_2-2} ;
-% \end{equation}</p>
+$$</p>
+<h1 id="5-一维情况">5. 一维情况</h1>
+<p>在正态分布及等协方差矩阵的假设下, 以$\bar{x_{c_i}}$估计均值，$S_{c_i}$估计协方差矩阵，则有：</p>
+<p>$$
+w^*=(S_{c_1}+S_{c_2})^{-1}(\bar{x_{c_1}}-\bar{x_{c_2}})
+$$</p>
+<p>$$
+w_0=\frac{1}{2}(\bar{x_{c_1}}+\bar{x_{c_2}})^T(S_{c_1}+S_{c_2})^{-1}(\bar{x_{c_1}}-\bar{x_{c_2}})+\ln\frac{P(c_2)}{P(c_1)}
+$$</p>
+<p>利用先验知识确定一维分类阈值 $w_0$</p>
 <p>$$
 \begin{aligned}
 &amp; w_0=\frac{w^{*T}(\bar{x_{c_1}}+\bar{x_{c_2}})}{2}\
@@ -315,7 +287,23 @@ $$</p>
 
 <aside class="post-toc">
     <nav id="toc">
-        <nav id="TableOfContents"></nav>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1-符号说明">1. 符号说明</a></li>
+            <li><a href="#2-基本思想">2. 基本思想</a></li>
+            <li><a href="#3-定义目标函数">3. 定义目标函数</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#4-闭式解">4. 闭式解</a></li>
+    <li><a href="#5-一维情况">5. 一维情况</a></li>
+  </ul>
+</nav>
     </nav>
 </aside>
 
