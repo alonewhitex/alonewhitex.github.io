@@ -17,26 +17,26 @@
     
 
     
-    <title>Posts</title>
-    <meta name="description" content="A blog about my life and my thoughts.">
-    <meta name="keywords" content=''>
+    <title>美化terminal</title>
+    <meta name="description" content="Macos上的终端美化">
+    <meta name="keywords" content='blog'>
 
-    <meta property="og:url" content="https://alonewhitex.github.io/posts/">
+    <meta property="og:url" content="https://alonewhitex.github.io/posts/%E7%BE%8E%E5%8C%96terminal/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Posts">
-    <meta property="og:description" content="A blog about my life and my thoughts.">
+    <meta property="og:title" content="美化terminal">
+    <meta property="og:description" content="Macos上的终端美化">
     <meta property="og:image" content="https://alonewhitex.github.io/images/avater.jpg">
     <meta property="og:image:secure_url" content="https://alonewhitex.github.io/images/avater.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Posts">
-    <meta name="twitter:description" content="A blog about my life and my thoughts.">
-    <meta property="twitter:domain" content="https://alonewhitex.github.io/posts/">
-    <meta property="twitter:url" content="https://alonewhitex.github.io/posts/">
+    <meta name="twitter:title" content="美化terminal">
+    <meta name="twitter:description" content="Macos上的终端美化">
+    <meta property="twitter:domain" content="https://alonewhitex.github.io/posts/%E7%BE%8E%E5%8C%96terminal/">
+    <meta property="twitter:url" content="https://alonewhitex.github.io/posts/%E7%BE%8E%E5%8C%96terminal/">
     <meta name="twitter:image" content="https://alonewhitex.github.io/images/avater.jpg">
 
     
-    <link rel="canonical" href="https://alonewhitex.github.io/posts/" />
+    <link rel="canonical" href="https://alonewhitex.github.io/posts/%E7%BE%8E%E5%8C%96terminal/" />
 
     
     <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
@@ -149,30 +149,85 @@
     </nav>
 </header>
 <main id="content">
-    <div class="container list-posts">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>美化terminal</h1>
+        <small role="doc-subtitle">Macos上的终端美化</small>
+        <p class="post-date">
+            November 3, 2023
+        </p>
 
-    <h1 class="list-title">Posts</h1>
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://alonewhitex.github.io/tags/blog">blog</a></li>
+        
+        </ul>
+    </div>
 
-    
+    <div class="post-content">
+        <p>
+            <h1 id="美化terminal-on-macos">美化terminal on macos</h1>
+<h2 id="下载oh-my-zsh">下载Oh My Zsh</h2>
+<pre tabindex="0"><code>sh -c &#34;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&#34;
+</code></pre><h2 id="更改配色可选">更改配色(可选)</h2>
+<p><a href="https://draculatheme.com/iterm">https://draculatheme.com/iterm</a>下载配色方案</p>
+<p>解压后Preferences-Profiles-Color-Color Presets-Import</p>
+<h2 id="设置zsh主题">设置zsh主题</h2>
+<p>安装powerline字体https://github.com/powerline/fonts</p>
+<p>然后把iTerm的字体设置为powerline</p>
+<p>下载主题文件：</p>
+<pre tabindex="0"><code>git clone https://github.com/denysdovhan/spaceship-prompt.git &#34;$ZSH_CUSTOM/themes/spaceship-prompt&#34; --depth=1
+</code></pre><p>创建软连接</p>
+<pre tabindex="0"><code>ln -s &#34;$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme&#34; &#34;$ZSH_CUSTOM/themes/spaceship.zsh-theme&#34;
+</code></pre><p>修改zsh配置</p>
+<pre tabindex="0"><code>vim ~/.zshrc
+</code></pre><p>修改：</p>
+<pre tabindex="0"><code>ZSH_THEME=&#34;spaceship&#34;
+</code></pre><p>生效：</p>
+<pre tabindex="0"><code>source ~/.zshrc
+</code></pre><p>然后就是主题的一些配置，配置说明参考这个文件：</p>
+<p><a href="https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/Options.md">https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/Options.md</a></p>
+<h2 id="插件-zsh-autosuggestions">插件 zsh-autosuggestions</h2>
+<pre tabindex="0"><code>git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+</code></pre><h2 id="插件-zsh-syntax-highlighting">插件 zsh-syntax-highlighting</h2>
+<pre tabindex="0"><code>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+</code></pre><h2 id="插件-zsh-z">插件 Zsh-z</h2>
+<pre tabindex="0"><code>git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
+</code></pre><h2 id="修改zshrc">修改~/.zshrc</h2>
+<pre tabindex="0"><code>plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-z)
+</code></pre>
+        </p>
+        
+    </div>
 
-    <h2 class="posts-year">2023</h2><article class="post-title">
-    <a href="https://alonewhitex.github.io/posts/%E7%BE%8E%E5%8C%96terminal/" class="post-link">美化terminal</a>
-    <div class="flex-break"></div>
-    <span class="post-date">November 3, 2023</span>
-</article>
-
-    
-
-    <h2 class="posts-year">2022</h2><article class="post-title">
-    <a href="https://alonewhitex.github.io/posts/fisher%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB/" class="post-link">Fisher线性判别</a>
-    <div class="flex-break"></div>
-    <span class="post-date">September 15, 2022</span>
-</article>
-
-    
-
+    <div class="prev-next">
+        
+    </div>
 </div>
 
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#美化terminal-on-macos">美化terminal on macos</a>
+      <ul>
+        <li><a href="#下载oh-my-zsh">下载Oh My Zsh</a></li>
+        <li><a href="#更改配色可选">更改配色(可选)</a></li>
+        <li><a href="#设置zsh主题">设置zsh主题</a></li>
+        <li><a href="#插件-zsh-autosuggestions">插件 zsh-autosuggestions</a></li>
+        <li><a href="#插件-zsh-syntax-highlighting">插件 zsh-syntax-highlighting</a></li>
+        <li><a href="#插件-zsh-z">插件 Zsh-z</a></li>
+        <li><a href="#修改zshrc">修改~/.zshrc</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
 
         </main><footer class="footer">
     

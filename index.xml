@@ -6,12 +6,30 @@
     <description>Recent content on alonewhite</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 15 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://alonewhitex.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://alonewhitex.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>美化terminal</title>
+      <link>https://alonewhitex.github.io/posts/%E7%BE%8E%E5%8C%96terminal/</link>
+      <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://alonewhitex.github.io/posts/%E7%BE%8E%E5%8C%96terminal/</guid>
+      <description>美化terminal on macos 下载Oh My Zsh sh -c &amp;#34;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;#34; 更改配色(可选) https://draculatheme.com/iterm下载配色方案
+解压后Preferences-Profiles-Color-Color Presets-Import
+设置zsh主题 安装powerline字体https://github.com/powerline/fonts
+然后把iTerm的字体设置为powerline
+下载主题文件：
+git clone https://github.com/denysdovhan/spaceship-prompt.git &amp;#34;$ZSH_CUSTOM/themes/spaceship-prompt&amp;#34; --depth=1 创建软连接
+ln -s &amp;#34;$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme&amp;#34; &amp;#34;$ZSH_CUSTOM/themes/spaceship.zsh-theme&amp;#34; 修改zsh配置
+vim ~/.zshrc 修改：
+ZSH_THEME=&amp;#34;spaceship&amp;#34; 生效：
+source ~/.zshrc 然后就是主题的一些配置，配置说明参考这个文件：
+https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/Options.md
+插件 zsh-autosuggestions git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions 插件 zsh-syntax-highlighting git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting 插件 Zsh-z git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z 修改~/.zshrc plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-z) </description>
+    </item>
     <item>
       <title>Fisher线性判别</title>
       <link>https://alonewhitex.github.io/posts/fisher%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB/</link>
-      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
-      
+      <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
       <guid>https://alonewhitex.github.io/posts/fisher%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB/</guid>
       <description>1. 符号说明 $$ X=(x_1\ x_2\ \dots\ x_N)^T=\left(\begin{array}{c} x_1^T \ x_2^T \ \dots \ x_N^T \end{array}\right)_{N \times p}^T $$
 $$ Y=(y_1\ y_2\ \dots\ y_N)^T=\left(\begin{array}{c} y_1 \ y_2 \ \dots \ y_N \end{array}\right)_{N \times 1}^T $$
@@ -28,6 +46,5 @@ $$ \bar{z}=\frac{1}{N}\sum\limits_{i=1}^{N}z_i=\frac{1}{N}\sum\limits_{i=1}^{N}w
 $$ S_z=\frac{1}{N}\sum\limits_{i=1}^N(z_i-\bar{z})(z_i-\bar{z})^T=\frac{1}{N}\sum\limits_{i=1}^N(w^Tx_i-\bar{z})(w^Tx_i-\bar{z})^T $$
 具体来说：</description>
     </item>
-    
   </channel>
 </rss>
